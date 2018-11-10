@@ -4,6 +4,8 @@ import cn.itlz.filter.MyFilter;
 import cn.itlz.filter.MyFilterOne;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +23,7 @@ import javax.servlet.Filter;
  * Date: 2018/11/9 0009
  */
 @Configuration
+@EnableConfigurationProperties(TestProperties.class)
 public class Config {
 
     @Autowired
@@ -35,7 +38,7 @@ public class Config {
      * 这个方法是打印filter
      */
     @PostConstruct
-    public void test() {
+    public void postConstruct() {
         System.out.println("hello");
         System.out.println(filter);
     }
@@ -59,6 +62,12 @@ public class Config {
         DelegatingFilterProxyRegistrationBean registrationBean =
                 new DelegatingFilterProxyRegistrationBean("myFilterChainProxy");
         return registrationBean;
+    }
+
+    @Bean
+    @ConfigurationProperties("test")
+    public Test test() {
+        return new Test();
     }
 
 }

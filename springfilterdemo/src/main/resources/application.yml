@@ -3,3 +3,7 @@ spring:
     user:
       password: user
       name: user
+
+test:
+  hello: hello everybody
+  itlz: itlz.cn是我的网站
