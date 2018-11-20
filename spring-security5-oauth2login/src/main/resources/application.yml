@@ -1,0 +1,25 @@
+
+spring:
+  security:
+    user:
+      name: user
+      password: user
+    oauth2:
+      client:
+        registration:
+          qq:
+            client-id: 101518669
+            client-secret: 75d6f7248f01acf3e081adfafc4ace1c
+            authorizationGrantType: authorization_code
+            redirectUriTemplate: http://www.itlz.cn/qqlogin/callback.do
+            scope: get_user_info
+            clientName: QQ登录
+        provider:
+          qq:
+            authorization-uri: https://graph.qq.com/oauth2.0/authorize
+            token-uri: https://graph.qq.com/oauth2.0/token
+            user-info-uri: https://graph.qq.com/user/get_user_info
+            user-name-attribute: sub
+            jwk-set-uri: https://graph.qq.com/oauth2.0/token
+server:
+  port: 80

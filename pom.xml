@@ -10,6 +10,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <properties>
+        <security.version>5.0.8.RELEASE</security.version>
+        <spring-cloud-starter-security.version>2.0.1.RELEASE</spring-cloud-starter-security.version>
+    </properties>
+
     <groupId>cn.itlz.demo</groupId>
     <artifactId>demo-parent</artifactId><packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -19,9 +24,40 @@
         <module>springfilter-demo</module>
         <module>chainpattern</module>
         <module>spring-container</module>
+        <module>spring-security5-oauth2login</module>
+        <module>oauth2-resource-server</module>
+        <module>oauth2-authentication-server</module>
     </modules>
 
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-core</artifactId>
+                <version>${security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-client</artifactId>
+                <version>${security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-oauth2-jose</artifactId>
+                <version>${security.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-security</artifactId>
+                <version>${spring-cloud-starter-security.version}</version>
+            </dependency>
+        </dependencies>
+
+    </dependencyManagement>
 
 
 

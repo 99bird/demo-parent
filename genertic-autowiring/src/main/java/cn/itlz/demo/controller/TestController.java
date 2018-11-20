@@ -24,4 +24,9 @@ public class TestController {
         }
         return "SUCCESS";
     }
+
+    @GetMapping("/firstSon")
+    public String firstSon() {
+        return testService.getFirstSon();
+    }
 }
