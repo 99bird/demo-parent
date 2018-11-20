@@ -16,7 +16,7 @@ public class QQOAuth2ConfigurerAdapter extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/login.html","/userinfo")
+                .antMatchers("/login.html")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

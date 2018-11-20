@@ -1,4 +1,4 @@
-package cn.itlz.demo.oauth2.authoriation.server;
+package cn.itlz.demo.authorization;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2018/11/20 0020
  */
 @SpringBootApplication
-public class AuthorizationServerApplication {
+public class AuthorizationApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AuthorizationServerApplication.class, args);
+        SpringApplication.run(AuthorizationApplication.class, args);
     }
 }
