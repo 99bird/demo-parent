@@ -1,26 +1,12 @@
-
 server:
   port: 8000
-
 spring:
-  security:
-    user:
-      name: user
-      password: user
   application:
     name: resource-server
 
-
-#security:
-#  oauth2:
-#    client:
-#      client-id: itlz
-#      client-secret: itlz
-#      user-authorization-uri: http://localhost:8060/oauth/authorize
-#      access-token-uri: http://localhost:8060/oauth/token
-#    resource:
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-#      user-info-uri:
+  instance:
+    hostname: localhost

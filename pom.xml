@@ -30,6 +30,7 @@
         <module>zuul-demo</module>
         <module>eureka-demo</module>
         <module>oauth2-auth-server</module>
+        <module>Bean-Scope-Demo</module>
     </modules>
 
 

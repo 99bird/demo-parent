@@ -5,6 +5,7 @@ security:
     client:
       client-id: itlz
       client-secret: itlz
+      scope: all
 spring:
   security:
     user:
