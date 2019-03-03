@@ -1,0 +1,27 @@
+server:
+  port: 8001
+security:
+  oauth2:
+    client:
+      client-id: itlz
+      client-secret: itlz
+      scope: all
+spring:
+  security:
+    user:
+      name: user
+      password: user
+      roles: USER
+  application:
+    name: auth-server
+  redis:
+    host: 192.168.88.134
+  mvc:
+    favicon:
+      enabled: false
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka
+  instance:
+    hostname: localhost

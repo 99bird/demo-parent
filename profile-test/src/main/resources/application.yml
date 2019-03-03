@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: profile-test
+  profiles:
+    active: dev
+---
+cn:
+  itlz:
+    a: test
+spring:
+  profiles: test
+
+server:
+  port: 8081
+---
+spring:
+     profiles: dev
+
+cn:
+  itlz:
+    a: dev
+server:
+  port: 8082

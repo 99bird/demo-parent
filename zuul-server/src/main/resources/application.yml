@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: zuul-server
+  mvc:
+    favicon:
+      enabled: true
+server:
+  port: 8088
+  servlet:
+    session:
+      cookie:
+        name: ZUULSESSION
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+  instance:
+    hostname: localhost
+
+security:
+  oauth2:
+    client:
+      client-id: itlz
+      client-secret: itlz
+      user-authorization-uri: http://localhost:8001/oauth/authorize
+      access-token-uri: http://localhost:8001/oauth/token
+      scope: all
+    resource:
+      jwt:
+        key-value: itlz
+
+zuul:
+  routes:
+    resource-server:
+      path: /api/**
+      serviceId: resource-server
+      sensitiveHeaders: "*"
+#    auth-server:
+#      path: /passport/**
+#      serviceId: auth-server
+#      sensitiveHeaders: "*"

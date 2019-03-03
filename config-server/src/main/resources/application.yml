@@ -1,0 +1,25 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://itlz.cn:3005/liuzd/config-center.git
+          username: liuzd
+          password: 19951203d
+          search-paths: yml-config
+  application:
+    name: config-server
+
+#  rabbitmq:
+#    username: guest
+#    password: guest
+#    port: 5672
+#    host: 192.168.88.137
+
+server:
+  port: 9000
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

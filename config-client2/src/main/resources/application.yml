@@ -1,0 +1,16 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: config-client
+  rabbitmq:
+    host: 192.168.88.137
+    username: guest
+    password: guest
+    port: 5672
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
