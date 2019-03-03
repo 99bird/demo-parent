@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bean-scope-demo</artifactId>
+    <artifactId>BeanScopeDemo</artifactId>
 
     <dependencies>
         <dependency>

@@ -28,6 +28,7 @@
         <module>service-provider</module>
         <module>profile-test</module>
         <module>rxjava-start</module>
+        <module>mybatis-demo</module>
     </modules>
     <packaging>pom</packaging>
 
