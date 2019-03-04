@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"content="width=device-width, initial-scale=1" />
+    <title>登录</title>
+</head>
+<body>
+<h1>登录页面</h1>
+<form action="/login" method="post">
+    <table>
+        <tr>
+            <td>用户名:</td>
+            <td><input type="text" name="username"></td>
+        </tr>
+        <tr>
+            <td>密码:</td>
+            <td><input type="password" name="password"></td>
+        </tr>
+        <!--<tr>-->
+        <!--<td>图形验证码:</td>-->
+        <!--<td>-->
+        <!--<input type="text" name="imageCode">-->
+        <!--<img src="/code/image?width=200">-->
+        <!--</td>-->
+        <!--</tr>-->
+        <!--<tr>-->
+        <!--<td colspan='2'><input name="remember-me" type="checkbox" value="true" />记住我</td>-->
+        <!--</tr>-->
+        <tr>
+            <td colspan="2"><button type="submit">登录</button></td>
+        </tr>
+    </table>
+
+    <h1>社交登录</h1>
+    <a href="/qqlogin/callback.do">QQ登录</a>
+</form>
+
+</body>
+</html>

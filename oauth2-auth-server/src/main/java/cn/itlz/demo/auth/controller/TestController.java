@@ -1,6 +1,6 @@
 package cn.itlz.demo.auth.controller;
 
-import cn.itlz.demo.auth.dto.SimpleResponse;
+import cn.itlz.demo.auth.dto.response.SimpleResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,8 +13,6 @@ public class TestController {
 
     @GetMapping("/test")
     public SimpleResponse test() {
-        SimpleResponse response = new SimpleResponse();
-        response.setContect("SUCCESS");
-        return response;
+        return new SimpleResponse("SUCCESS");
     }
 }

@@ -89,6 +89,7 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
             builder.redirectUris(
                     this.details.getRegisteredRedirectUri().toArray(new String[0]));
         }
+        builder.autoApprove(true);
     }
 
     public void configure(AuthorizationServerEndpointsConfigurer endpoints)
