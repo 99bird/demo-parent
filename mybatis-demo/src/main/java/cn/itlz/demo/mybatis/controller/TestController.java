@@ -87,7 +87,7 @@ public class TestController {
 
     /**
      * 单表分页查询，自定义属性
-     * TODO 先查出数据，然后塞进page对象中
+     * TODO 先根据分页参数查出数据，然后塞进page对象中
      * @return 分页数据
      */
     @GetMapping("getUserDtoByPage")
@@ -102,7 +102,8 @@ public class TestController {
      * 多表分页查询
      * @return 分页数据
      */
-    /*public IPage<UserInfo> getUserInfoByPage() {
-
-    }*/
+//    @GetMapping("getUserInfoList")
+//    public List<UserInfo> getUserInfoByPage() {
+//        return userDao.getUserInfoList();
+//    }
 }

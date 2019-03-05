@@ -26,4 +26,7 @@ public interface UserDao extends BaseMapper<User> {
     @Select("select * from user")
     List<UserDto> getUserDtoByPage(Page<UserDto> page);
 
+//    @Select("select u.name,s.score from user as u left join score as s where u.age=12 and s.score=100")
+//    List<UserInfo> getUserInfoList();
+
 }
