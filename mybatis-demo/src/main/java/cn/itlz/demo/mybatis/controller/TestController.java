@@ -98,6 +98,11 @@ public class TestController {
         return page;
     }
 
+    @GetMapping("userXml")
+    public UserInfo getUserXml() {
+        return userDao.getUserMapper();
+    }
+
     /**
      * 多表分页查询
      * @return 分页数据
