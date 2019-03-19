@@ -29,6 +29,9 @@
         <module>profile-test</module>
         <module>rxjava-start</module>
         <module>mybatis-demo</module>
+        <module>es-demo</module>
+        <module>fastdfs-demo</module>
+        <module>reactor-netty-demo</module>
     </modules>
     <packaging>pom</packaging>
 

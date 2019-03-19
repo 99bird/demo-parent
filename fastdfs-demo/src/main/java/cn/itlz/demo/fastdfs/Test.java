@@ -1,4 +1,4 @@
-package cn.itlz.demo.thread.fdfs;
+package cn.itlz.demo.fastdfs;
 
 import org.csource.fastdfs.*;
 
