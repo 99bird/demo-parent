@@ -3,10 +3,10 @@ spring:
     config:
       server:
         git:
-          uri: http://itlz.cn:3005/liuzd/config-center.git
-          username: liuzd
+          uri: https://gitee.com/bird99/config.git
+          username: 77822013@qq.com
           password: 19951203d
-          search-paths: yml-config
+          search-paths: /
   application:
     name: config-server
 

@@ -6,19 +6,3 @@ spring:
     name: profile-test
   profiles:
     active: dev
----
-cn:
-  itlz:
-    a: test
-spring:
-  profiles: test
-
-server:
-  port: 8081
----
-spring:
-     profiles: dev
-
-cn:
-  itlz:
-    a: dev

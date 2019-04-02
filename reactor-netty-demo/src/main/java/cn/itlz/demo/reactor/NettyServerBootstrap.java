@@ -1,3 +1,4 @@
+/*
 package cn.itlz.demo.reactor;
 
 import org.springframework.http.MediaType;
@@ -9,9 +10,11 @@ import reactor.netty.http.server.HttpServer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+*/
 /**
  * @author Liuzd QQ: 77822013 2019/3/10 0010
- */
+ *//*
+
 public class NettyServerBootstrap {
 
     //初始化handlerFunction，相当于Controller
@@ -35,3 +38,4 @@ public class NettyServerBootstrap {
         new NettyServerBootstrap().start();
     }
 }
+*/

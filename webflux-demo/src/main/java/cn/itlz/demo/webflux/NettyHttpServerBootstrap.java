@@ -1,3 +1,4 @@
+/*
 package cn.itlz.demo.webflux;
 
 import org.springframework.boot.web.embedded.netty.NettyWebServer;
@@ -13,11 +14,13 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
+*/
 /**
  * 手动启动NettyWebServer并添加RouterFunction和HandlerFunction
  * @author Liuzd QQ: 77822013
  * @since 2019/1/8 0008
- */
+ *//*
+
 public class NettyHttpServerBootstrap {
 
     //初始化handlerFunction，相当于Controller
@@ -40,10 +43,12 @@ public class NettyHttpServerBootstrap {
         nettyWebServer.start();
     }
 
-    /**
+    */
+/**
      * 让线程阻塞，否则启动后就会立即结束
      * @param nettyContext 服务上下文
-     */
+     *//*
+
     private void startDaemonAwaitThread(BlockingNettyContext nettyContext) {
         Thread awaitThread = new Thread("server") {
 
@@ -61,3 +66,4 @@ public class NettyHttpServerBootstrap {
         new NettyHttpServerBootstrap().start();
     }
 }
+*/

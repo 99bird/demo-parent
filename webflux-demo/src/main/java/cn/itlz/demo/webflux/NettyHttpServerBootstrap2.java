@@ -1,3 +1,4 @@
+/*
 package cn.itlz.demo.webflux;
 
 import org.springframework.http.MediaType;
@@ -16,11 +17,13 @@ import java.util.Date;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 
+*/
 /**
  * NettyWebServer的另外一种启动方式，直接在当前线程中阻塞
  * @author Liuzd QQ: 77822013
  * @since 2019/1/8 0008
- */
+ *//*
+
 public class NettyHttpServerBootstrap2 {
     public static void main(String[] args) {
         HandlerFunction<ServerResponse> timeFunction =
@@ -34,3 +37,4 @@ public class NettyHttpServerBootstrap2 {
         server.getContext().onClose().block();
     }
 }
+*/

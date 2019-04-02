@@ -33,6 +33,7 @@
         <module>fastdfs-demo</module>
         <module>reactor-netty-demo</module>
         <module>rbac-spring-security</module>
+        <module>swagger-test</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -123,6 +124,14 @@
     </dependencyManagement>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+            <scope>provided</scope>
+        </dependency>
+
         <dependency>
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
