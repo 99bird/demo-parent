@@ -34,6 +34,7 @@
         <module>reactor-netty-demo</module>
         <module>rbac-spring-security</module>
         <module>swagger-test</module>
+        <module>jpa-demo</module>
     </modules>
     <packaging>pom</packaging>
 

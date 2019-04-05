@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 
 /**
@@ -15,7 +16,10 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
  */
 @Configuration
 @EnableAuthorizationServer
+@EnableResourceServer
 public class AuthServerSecurityConfiguration extends WebSecurityConfigurerAdapter {
+
+
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -27,7 +31,7 @@ public class AuthServerSecurityConfiguration extends WebSecurityConfigurerAdapte
 //                .successHandler(gatewayRequestLoginSuccessHandler())
 //                .successHandler(authenticationSuccessHandler())
                 .and()
-                .authorizeRequests().antMatchers("/login.html","/login","/require","/loginRedirect","/favicon.ico").permitAll()
+                .authorizeRequests().antMatchers("/login.html", "/login", "/require", "/loginRedirect", "/favicon.ico").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .csrf().disable();

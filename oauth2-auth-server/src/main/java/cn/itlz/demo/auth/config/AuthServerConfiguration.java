@@ -1,3 +1,4 @@
+/*
 package cn.itlz.demo.auth.config;
 
 import org.apache.commons.logging.Log;
@@ -31,12 +32,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.UUID;
 
+*/
 /**
  * 认证服务器的配置
  *
  * @author Liuzd QQ: 77822013
  * @since 2018/12/4 0004
- */
+ *//*
+
 @Configuration
 @EnableConfigurationProperties(AuthorizationServerProperties.class)
 public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapter {
@@ -177,3 +180,4 @@ public class AuthServerConfiguration extends AuthorizationServerConfigurerAdapte
     }
 
 }
+*/
