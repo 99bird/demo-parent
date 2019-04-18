@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/17 0017
@@ -12,14 +13,15 @@ import javax.persistence.*;
 @Entity
 @Table(name = "course")
 @JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
-public class Course {
+public class Course implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
     @ManyToOne(targetEntity = User.class)
-    @JoinColumn(name = "user_id",referencedColumnName = "id")
+//    @JoinColumn(name = "id",referencedColumnName = "user_id")
     private User user;
 }

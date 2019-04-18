@@ -9,6 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
  */
@@ -22,19 +26,23 @@ public class TestController {
     private CourseRepository courseRepository;
 
     @GetMapping("user")
-    public User getUser() {
+    public String getUser() {
         User u = userRepository.getOne(1L);
 
-        UserDto userDto = new UserDto();
-        userDto.setId(u.getId());
-        userDto.setName(u.getName());
-        return u;
+//        UserDto userDto = new UserDto();
+//        userDto.setId(u.getId());
+//        userDto.setName(u.getName());
+//        Set<Course> courses = u.getCourses();
+        List<Course> courses = u.getCourses();
+
+        return courses.get(0).getName();
     }
 
     @GetMapping("course")
-    public Course getCourse() {
+    public String getCourse() {
         Course course = courseRepository.getOne(1L);
-        return course;
+        User user = course.getUser();
+        return user.getName();
     }
 
     @GetMapping("user1")
@@ -42,4 +50,35 @@ public class TestController {
 //        return userRepository.getUserDto();
         return null;
     }
+
+    @GetMapping("saveUser")
+    public String saveUser() {
+        User user = new User();
+        user.setAge(25);
+        user.setName("hhh");
+
+        userRepository.save(user);
+        return "success";
+    }
+
+    @GetMapping("saveCourse")
+    public String saveCourse() {
+        Course course = new Course();
+        course.setName("语文课程");
+        courseRepository.save(course);
+        return "course";
+    }
+
+    @GetMapping("join")
+    public String joinUser() {
+        Course course = courseRepository.getOne(1L);
+        User user = userRepository.getOne(1L);
+        Set<Course> courses = new HashSet<>();
+        courses.add(course);
+//        user.setCourses(courses);
+        userRepository.save(user);
+        return "join";
+    }
+
+
 }

@@ -3,13 +3,10 @@ package cn.itlz.jap.entity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
@@ -21,6 +18,7 @@ import java.util.Set;
 public class User implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
@@ -28,6 +26,6 @@ public class User implements Serializable {
     private Integer age;
 
     @OneToMany(targetEntity = Course.class)
-
-    private Set<Course> courses = new HashSet<>();
+    @JoinColumn(name = "user_id",referencedColumnName = "id")
+    private List<Course> courses = new ArrayList<>();
 }
