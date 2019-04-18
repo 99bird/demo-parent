@@ -1,12 +1,15 @@
 package cn.itlz.jap.dto.response;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserDto {
 
     public interface View {}
@@ -15,6 +18,8 @@ public class UserDto {
 
 //    @JsonView(View.class)
 //    @JsonIgnoreProperties
-    @JsonIgnore
+//    @JsonIgnore
     private String name;
+
+    private String roleName;
 }
