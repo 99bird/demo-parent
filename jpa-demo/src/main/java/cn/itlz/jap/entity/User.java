@@ -5,8 +5,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
@@ -27,5 +27,5 @@ public class User implements Serializable {
 
     @OneToMany(targetEntity = Course.class)
     @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private List<Course> courses = new ArrayList<>();
+    private Set<Course> courses = new HashSet<>();
 }

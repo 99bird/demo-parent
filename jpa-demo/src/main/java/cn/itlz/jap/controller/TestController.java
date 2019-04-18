@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashSet;
-import java.util.List;
+import java.util.Iterator;
 import java.util.Set;
 
 /**
@@ -33,9 +33,12 @@ public class TestController {
 //        userDto.setId(u.getId());
 //        userDto.setName(u.getName());
 //        Set<Course> courses = u.getCourses();
-        List<Course> courses = u.getCourses();
-
-        return courses.get(0).getName();
+        Set<Course> courses = u.getCourses();
+        Iterator<Course> iterator = courses.iterator();
+        while (iterator.hasNext()) {
+            return iterator.next().getName();
+        }
+        return null;
     }
 
     @GetMapping("course")
