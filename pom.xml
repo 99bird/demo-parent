@@ -35,6 +35,7 @@
         <module>rbac-spring-security</module>
         <module>swagger-test</module>
         <module>jpa-demo</module>
+        <module>pdf-demo</module>
     </modules>
     <packaging>pom</packaging>
 

@@ -4,11 +4,13 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 /**
- * @author Liuzd QQ: 77822013 2019/3/20 0020
+ * @author liuzd <QQ: 77822013> 2019/9/4 0004
  */
+@TableName("user")
 @Data
-@TableName("sp")
-public class Sp {
-    private Integer id;
+public class UserEntity {
+
+    private Long id;
     private String name;
+    private Integer age;
 }
