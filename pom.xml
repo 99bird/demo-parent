@@ -36,6 +36,7 @@
         <module>swagger-test</module>
         <module>jpa-demo</module>
         <module>pdf-demo</module>
+        <module>java-async</module>
     </modules>
     <packaging>pom</packaging>
 
