@@ -10,7 +10,14 @@ import java.util.concurrent.FutureTask;
  */
 public class FutureDemo {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        Callable<String> callable = new Callable<String>() {
+
+        FutureDemo futureDemo = new FutureDemo();
+        futureDemo.simpleFuture();
+
+    }
+
+    private void simpleFuture() throws ExecutionException, InterruptedException {
+        Callable<String> callable = new Callable<String>() {                    //创建要执行的
             @Override
             public String call() throws Exception {
                 System.out.println("hheo");
@@ -18,10 +25,10 @@ public class FutureDemo {
             }
         };
 
-        FutureTask<String> futureTask = new FutureTask<>(callable);
+        FutureTask<String> futureTask = new FutureTask<>(callable);             //把要执行的创建为FutureTask（任务）
 
-        new Thread(futureTask).start();
+        new Thread(futureTask).start();                                         //执行
 
-        System.out.println(futureTask.get());
+        System.out.println(futureTask.get());                                   //获取执行结果
     }
 }
