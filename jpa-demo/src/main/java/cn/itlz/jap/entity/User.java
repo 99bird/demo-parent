@@ -6,6 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -27,5 +28,5 @@ public class User implements Serializable {
 
     @OneToMany(targetEntity = Course.class)
     @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private Set<Course> courses = new HashSet<>();
+    private List<Course> courses;
 }
