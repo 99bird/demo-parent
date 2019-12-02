@@ -1,3 +1,4 @@
+/*
 package cn.itlz.demo.zuul.config;
 
 import cn.itlz.demo.zuul.handler.MyRedirectStrategy;
@@ -17,11 +18,11 @@ import org.springframework.web.filter.CorsFilter;
 import javax.annotation.PostConstruct;
 
 @Configuration
-@EnableOAuth2Sso
+//@EnableOAuth2Sso
 public class ZuulSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private OAuth2ClientContextFilter oAuth2ClientContextFilter;
+//    @Autowired
+//    private OAuth2ClientContextFilter oAuth2ClientContextFilter;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -36,13 +37,16 @@ public class ZuulSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .csrf().disable();
     }
 
-    /**
+    */
+/**
      * 添加跨源资源访问过滤器
      * //TODO 把AllowedOrigin设置成可配置的
      *
      * @return CorsFilter
-     */
-    /*@Bean
+     *//*
+
+    */
+/*@Bean
     public CorsFilter corsFilter() {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
@@ -54,7 +58,8 @@ public class ZuulSecurityConfiguration extends WebSecurityConfigurerAdapter {
         source.registerCorsConfiguration("/**",corsConfiguration);
 
         return new CorsFilter(source);
-    }*/
+    }*//*
+
 
     @Bean
     public FilterRegistrationBean<CorsFilter> corsFilterFilterRegistrationBean() {
@@ -82,4 +87,4 @@ public class ZuulSecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
 
-}
+}*/

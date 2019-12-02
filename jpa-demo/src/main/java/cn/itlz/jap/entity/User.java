@@ -1,20 +1,17 @@
 package cn.itlz.jap.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
  */
 @Entity
 @Data
-@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
-@Table(name = "user")
+@Table(name = "user1")
 public class User implements Serializable {
 
     @Id
@@ -27,5 +24,5 @@ public class User implements Serializable {
 
     @OneToMany(targetEntity = Course.class)
     @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private Set<Course> courses = new HashSet<>();
+    private List<Course> courses;
 }

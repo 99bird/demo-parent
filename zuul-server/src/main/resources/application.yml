@@ -6,10 +6,10 @@ spring:
       enabled: true
 server:
   port: 8088
-  servlet:
-    session:
-      cookie:
-        name: ZUULSESSION
+#  servlet:
+#    session:
+#      cookie:
+#        name: ZUULSESSION
 
 eureka:
   client:
@@ -18,23 +18,23 @@ eureka:
   instance:
     hostname: localhost
 
-security:
-  oauth2:
-    client:
-      client-id: itlz
-      client-secret: itlz
-      user-authorization-uri: http://localhost:8001/oauth/authorize
-      access-token-uri: http://localhost:8001/oauth/token
-      scope: all
-    resource:
-      jwt:
-        key-value: itlz
+#security:
+#  oauth2:
+#    client:
+#      client-id: itlz
+#      client-secret: itlz
+#      user-authorization-uri: http://localhost:8001/oauth/authorize
+#      access-token-uri: http://localhost:8001/oauth/token
+#      scope: all
+#    resource:
+#      jwt:
+#        key-value: itlz
 
 zuul:
   routes:
-    resource-server:
+    service-provider:
       path: /api/**
-      serviceId: resource-server
+      serviceId: service-provider
       sensitiveHeaders: "*"
 #    auth-server:
 #      path: /passport/**

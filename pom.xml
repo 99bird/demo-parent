@@ -35,6 +35,9 @@
         <module>rbac-spring-security</module>
         <module>swagger-test</module>
         <module>jpa-demo</module>
+        <module>springcloud-gateway-demo</module>
+        <module>neo4j-demo</module>
+        <module>oauth2-login</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -49,7 +52,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Finchley.SR2</version>
+                <version>Greenwich.SR1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -98,9 +101,16 @@
 
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-security</artifactId>
+                <version>2.1.2.RELEASE</version>
+            </dependency>
+
+
+            <!--<dependency>
+                <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-security</artifactId>
                 <version>${spring-cloud-starter-security.version}</version>
-            </dependency>
+            </dependency>-->
 
             <dependency>
                 <groupId>io.springfox</groupId>

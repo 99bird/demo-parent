@@ -42,10 +42,16 @@ public class ServiceApplication {
         return responseEntity;
     }
 
-    @GetMapping(path="/events", produces= MediaType.TEXT_EVENT_STREAM_VALUE)
-    public SseEmitter handle() {
+    @GetMapping(path="/events", produces= MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public SseEmitter handle() throws IOException, InterruptedException {
         SseEmitter emitter = new SseEmitter();
         // Save the emitter somewhere..
+
+//        emitter.send("hi 你好呀");
+
+//        Thread.sleep(2000);
+
+//        emitter.send("请问你叫什么名字呀？");
         new Thread(()->{
             // In some other thread
             try {
@@ -54,25 +60,52 @@ public class ServiceApplication {
                 e.printStackTrace();
             }
 
-
             try {
-                emitter.send("Hello once");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }).start();
-
-
-        new Thread(()->{
-            // In some other thread
-            try {
-                Thread.sleep(10000);
+                Thread.sleep(1000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
+            try {
+                emitter.send("Hello once");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                emitter.send("Hello once");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                emitter.send("Hello once");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            emitter.complete();
+
         }).start();
+//        emitter.complete();
 
         return emitter;
     }

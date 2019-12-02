@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class UserDto {
 
-    public interface View {}
+//    public interface View {}
 
     private Long id;
 
@@ -21,5 +21,10 @@ public class UserDto {
 //    @JsonIgnore
     private String name;
 
-    private String roleName;
+    public UserDto(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    private String courseName;
 }

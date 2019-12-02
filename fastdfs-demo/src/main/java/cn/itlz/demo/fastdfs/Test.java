@@ -11,7 +11,7 @@ public class Test {
 
 	public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
 		// 1.加载配置文件
-		ClientGlobal.init("D:\\proj\\demo-parent\\thread-demo\\src\\main\\resources\\fdfs_client.conf");
+		ClientGlobal.init("D:\\proj\\demo\\demo-parent\\fastdfs-demo\\src\\main\\resources\\fdfs_client.conf");
 		// 2.构建一个管理者客户端
 		TrackerClient client=new TrackerClient();
 		// 3.连接管理者服务端

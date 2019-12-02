@@ -1,2 +1,6 @@
 server:
   port: 8080
+spring:
+  data:
+    mongodb:
+      host: 47.105.46.73

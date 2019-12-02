@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: neo4j-demo
+  data:
+    neo4j:
+      username: neo4j
+      password: 123456
+server:
+  port: 8080
+

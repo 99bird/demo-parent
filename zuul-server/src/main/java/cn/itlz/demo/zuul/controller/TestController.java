@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -27,7 +28,7 @@ public class TestController {
     private static final Logger logger = LoggerFactory.getLogger(TestController.class);
 
     @GetMapping("/hello")
-    public String hello() throws ExecutionException, InterruptedException {
+    public String hello(HttpServletRequest request) throws ExecutionException, InterruptedException {
 //        return new SimpleResponse("hello");
 
          Map<Integer, FutureTask<String>> map = new HashMap<>();

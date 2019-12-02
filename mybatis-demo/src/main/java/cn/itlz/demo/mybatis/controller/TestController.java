@@ -1,6 +1,8 @@
 package cn.itlz.demo.mybatis.controller;
 
+import cn.itlz.demo.mybatis.dao.CourseDao;
 import cn.itlz.demo.mybatis.dao.UserDao;
+import cn.itlz.demo.mybatis.dto.CourseDto;
 import cn.itlz.demo.mybatis.dto.UserDto;
 import cn.itlz.demo.mybatis.dto.UserInfo;
 import cn.itlz.demo.mybatis.entity.User;
@@ -22,6 +24,9 @@ public class TestController {
 
     @Autowired
     private UserDao userDao;
+
+    @Autowired
+    private CourseDao courseDao;
 
     @GetMapping("test")
     public String test() {
@@ -111,5 +116,14 @@ public class TestController {
 //    public List<UserInfo> getUserInfoByPage() {
 //        return userDao.getUserInfoList();
 //    }
+
+    @GetMapping("course")
+    public List<CourseDto>getCourse() {
+        long start = System.currentTimeMillis();
+        List<CourseDto> userInfos = courseDao.getCourse();
+        long end = System.currentTimeMillis();
+        System.out.println(end-start);
+        return userInfos;
+    }
 
 }

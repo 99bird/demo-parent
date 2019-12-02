@@ -1,5 +1,8 @@
 package cn.itlz.rxjava;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,13 +12,18 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        List<String> list = new ArrayList<>();
-        list.add("aaa");
-        list.add("bbb");
-        list.add("ccc");
-        /*list.forEach(a->{
-            System.out.println(a);
-        });*/
-        list.forEach(System.out::println);
+        List<A> list = new ArrayList<>();
+        list.add(new A("aaa"));
+        list.add(new A("bbb"));
+        list.add(new A("ccc"));
+        list.forEach(a-> System.out.println(a.getName()));
+//        list.forEach(System.out::println);
     }
+
+}
+@Data
+@AllArgsConstructor
+class A{
+    private String name;
+
 }

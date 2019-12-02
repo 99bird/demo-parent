@@ -1,5 +1,6 @@
 package cn.itlz.jap.controller;
 
+import cn.itlz.jap.dto.response.CourseDto;
 import cn.itlz.jap.dto.response.UserDto;
 import cn.itlz.jap.entity.Course;
 import cn.itlz.jap.entity.User;
@@ -9,9 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
@@ -29,28 +28,31 @@ public class TestController {
     public String getUser() {
         User u = userRepository.getOne(1L);
 
-//        UserDto userDto = new UserDto();
-//        userDto.setId(u.getId());
-//        userDto.setName(u.getName());
-//        Set<Course> courses = u.getCourses();
-        Set<Course> courses = u.getCourses();
-        Iterator<Course> iterator = courses.iterator();
-        while (iterator.hasNext()) {
-            return iterator.next().getName();
-        }
-        return null;
+        return u.getName();
     }
 
     @GetMapping("course")
-    public String getCourse() {
-        Course course = courseRepository.getOne(1L);
-        User user = course.getUser();
-        return user.getName();
+    public List<CourseDto> getCourse() {
+        List<Course> course = courseRepository.findAll();
+//        User user = course.getUser();
+        List<CourseDto> list = new ArrayList<>();
+        course.forEach(course1 -> {
+            CourseDto courseDto = new CourseDto();
+            courseDto.setUserName(course1.getUser().getName());
+            courseDto.setName(course1.getName());
+            list.add(courseDto);
+        });
+        return list;
     }
 
     @GetMapping("user1")
     public UserDto getUserDto() {
+        User user = userRepository.getOne(1L);
+        UserDto userDto = new UserDto();
+        userDto.setName(user.getName());
+//        userDto.setCourseName(user.get);
 //        return userRepository.getUserDto();
+
         return null;
     }
 
@@ -81,6 +83,11 @@ public class TestController {
 //        user.setCourses(courses);
         userRepository.save(user);
         return "join";
+    }
+
+    @GetMapping("users")
+    public List<UserDto> getUserIdAndName() {
+        return userRepository.getUsers();
     }
 
 
