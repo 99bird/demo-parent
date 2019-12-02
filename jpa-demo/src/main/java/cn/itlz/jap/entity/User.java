@@ -1,17 +1,21 @@
 package cn.itlz.jap.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * @author Liuzd QQ: 77822013 2019/4/4 0004
  */
 @Entity
 @Data
-@Table(name = "user1")
+@JsonIgnoreProperties(value = {"hibernateLazyInitializer", "handler"})
+@Table(name = "user")
 public class User implements Serializable {
 
     @Id

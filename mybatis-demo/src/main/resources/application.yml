@@ -2,14 +2,9 @@ spring:
   application:
     name: mybatis-demo
   datasource:
-#    url: jdbc:mysql://47.105.46.73:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
-#    username: root
-#    password: 19951203d
-    url: jdbc:mysql://192.168.1.103:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      #    username: root
-      #    password: 19951203d
+    url: jdbc:mysql://47.105.46.73:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
-    password: 123456
+    password: 19951203d
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 
@@ -29,4 +24,8 @@ mybatis-plus:
     #配置JdbcTypeForNull, oracle数据库必须配置
     jdbc-type-for-null: 'null'
 server:
-  port: 8081
+  port: 8888
+logging:
+  level:
+    cn.itlz.demo: debug
+#    mapper: info

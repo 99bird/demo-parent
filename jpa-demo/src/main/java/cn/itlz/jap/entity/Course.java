@@ -21,7 +21,7 @@ public class Course implements Serializable {
 
     private String name;
 
-    @ManyToOne(targetEntity = User.class)
+//    @ManyToOne(targetEntity = User.class)
 //    @JoinColumn(name = "id",referencedColumnName = "user_id")
-    private User user;
+//    private User user;
 }

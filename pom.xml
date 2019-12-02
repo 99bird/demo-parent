@@ -38,6 +38,8 @@
         <module>springcloud-gateway-demo</module>
         <module>neo4j-demo</module>
         <module>oauth2-login</module>
+        <module>pdf-demo</module>
+        <module>java-async</module>
     </modules>
     <packaging>pom</packaging>
 
